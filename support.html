@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Stock-Dawgg</title>
+  <meta name="description" content="Stock-Dawgg support. Get help with the app.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #b8860b;
+      --gold-light: #fef9e7;
+      --gold-border: #e8d88a;
+      --gold-dark: #7a6500;
+      --text: #1a1a1a;
+      --text-muted: #666;
+      --text-faint: #999;
+      --bg: #ffffff;
+      --bg-subtle: #fafaf8;
+      --border: rgba(0,0,0,0.08);
+      --border-strong: rgba(0,0,0,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--text); }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 48px 48px;
+    }
+
+    .page-header p {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+    }
+
+    .page-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .page-header .sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-muted);
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 48px 80px;
+    }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 52px;
+    }
+
+    .contact-card h2 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gold-dark);
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gold-dark);
+      line-height: 1.7;
+    }
+
+    .contact-card .email {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gold-dark);
+    }
+
+    /* FAQ */
+    .faq-section h2 {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 24px;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item h3 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .faq-item p + p {
+      margin-top: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-left {
+      font-size: 12px;
+      color: var(--text-faint);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .page-header { padding: 40px 24px 32px; }
+      .page-header h1 { font-size: 30px; }
+      .content { padding: 40px 24px 60px; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 16px; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">STOCK-DAWGG</a>
+    <ul class="nav-links">
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="support.html" class="active">Support</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p>Digi-Dawgg Labs LLC</p>
+    <h1>Support</h1>
+    <span class="sub">We're here to help.</span>
+  </div>
+
+  <div class="content">
+
+    <div class="contact-card">
+      <h2>Contact Us</h2>
+      <p>Have a question, found a bug, or want to share feedback? Send us a message and we'll get back to you as soon as possible.</p>
+      <span class="email">support@digidawgg.com</span>
+    </div>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>Is my portfolio data safe?</h3>
+        <p>Yes. All portfolio data is stored exclusively on your device and never transmitted to any server. Your data is protected by your device's built-in OS encryption — Android Keystore on Android 10+ and iOS Keychain on iOS 16+.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does Stock-Dawgg require an account?</h3>
+        <p>No. Stock-Dawgg requires no account, no login, and no email address. Install the app and start monitoring immediately.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do price alerts work?</h3>
+        <p>Stock-Dawgg monitors your watchlist in the background and sends a push notification — and triggers the Barking Dawgg animation — when a holding moves beyond your set threshold. You can configure separate thresholds for stocks and crypto.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does crypto monitoring work 24/7?</h3>
+        <p>Yes. Crypto is monitored around the clock since crypto markets never close. Stock alerts respect market hours, with an optional extended hours toggle for pre-market and after-hours activity.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What are the monthly PDF reports?</h3>
+        <p>On the 1st of each month, Stock-Dawgg automatically generates a PDF summary of your portfolio performance. Reports are built entirely on your device and saved to Downloads/StockDawgg/. They are never uploaded or shared.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I delete my data?</h3>
+        <p>Uninstall the app. All locally stored data — watchlist, portfolio, preferences, and cached data — is permanently deleted upon uninstallation. PDF reports saved to Downloads/StockDawgg/ can be deleted manually from your file manager.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What devices are supported?</h3>
+        <p>Stock-Dawgg supports Android 10 (API 29) and above, and iOS 16 and above. The app is available for both phone and tablet.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-left">© 2026 Digi-Dawgg Labs LLC &nbsp;·&nbsp; Stock-Dawgg</p>
+    <ul class="footer-links">
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

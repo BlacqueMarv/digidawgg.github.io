@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Stock-Dawgg™</title>
+  <meta name="description" content="Stock-Dawgg™ privacy policy. Your financial data never leaves your device.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #b8860b;
+      --gold-light: #fef9e7;
+      --gold-border: #e8d88a;
+      --gold-dark: #7a6500;
+      --text: #1a1a1a;
+      --text-muted: #666;
+      --text-faint: #999;
+      --bg: #ffffff;
+      --bg-subtle: #fafaf8;
+      --border: rgba(0,0,0,0.08);
+      --border-strong: rgba(0,0,0,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--text); }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 48px 48px;
+    }
+
+    .page-header p {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+    }
+
+    .page-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .page-header .meta {
+      font-size: 13px;
+      color: var(--text-faint);
+      letter-spacing: 0;
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 48px 80px;
+    }
+
+    .tagline {
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gold-dark);
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section h2 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul {
+      list-style: none;
+      margin: 8px 0 12px;
+    }
+
+    .section ul li {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .section strong {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* TABLE */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 16px 0;
+    }
+
+    .data-table th {
+      text-align: left;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border-strong);
+      background: var(--bg-subtle);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      font-weight: 300;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* CONTACT */
+    .contact-block {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-top: 12px;
+    }
+
+    .contact-block p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .contact-block strong {
+      font-weight: 500;
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-left {
+      font-size: 12px;
+      color: var(--text-faint);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .page-header { padding: 40px 24px 32px; }
+      .page-header h1 { font-size: 30px; }
+      .content { padding: 40px 24px 60px; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 16px; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">STOCK-DAWGG</a>
+    <ul class="nav-links">
+      <li><a href="privacy.html" class="active">Privacy</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p>Digi-Dawgg Labs LLC</p>
+    <h1>Privacy Policy</h1>
+    <span class="meta">Effective Date: [DATE] &nbsp;·&nbsp; Last Updated: [DATE]</span>
+  </div>
+
+  <div class="content">
+
+    <div class="tagline">
+      Your financial data never leaves your device. This is not a policy limitation — it is the architecture.
+    </div>
+
+    <div class="section">
+      <h2>1. Overview</h2>
+      <p>Stock-Dawgg™ is built on a single principle: your financial data belongs to you. This Privacy Policy explains what information Stock-Dawgg™ collects, how it is used, and how it is protected.</p>
+      <p>The short version — your portfolio data never leaves your device. Stock-Dawgg does not operate servers. Stock-Dawgg does not store your data in the cloud. Stock-Dawgg does not sell your data. Stock-Dawgg does not show ads.</p>
+    </div>
+
+    <div class="section">
+      <h2>2. Information We Collect</h2>
+      <p><strong>2a. Information You Provide</strong></p>
+      <p>The following information is entered by you and stored exclusively on your device:</p>
+      <ul>
+        <li>Stock and crypto symbols added to your watchlist</li>
+        <li>Portfolio holdings — ticker symbol, number of shares, buy price, broker name</li>
+        <li>Alert threshold preferences — stock and crypto separately</li>
+        <li>Dividend frequency preferences per holding</li>
+        <li>Extended hours alert preferences</li>
+      </ul>
+      <p>None of this information is transmitted to Digi-Dawgg Labs LLC or any third party. It exists only on your device.</p>
+
+      <p><strong>2b. Information Collected Automatically</strong></p>
+      <p>Stock-Dawgg makes API calls to the following third-party services to retrieve market data:</p>
+      <ul>
+        <li>Twelve Data — real-time stock and crypto price data</li>
+        <li>MarketAux — market news headlines and summaries</li>
+      </ul>
+      <p>These calls transmit only stock ticker symbols — never your name, email address, portfolio value, share count, cost basis, or any personally identifiable information.</p>
+
+      <p><strong>2c. Information We Do Not Collect</strong></p>
+      <p>Stock-Dawgg does not collect, store, or transmit any of the following:</p>
+      <ul>
+        <li>Your name or email address</li>
+        <li>Your location</li>
+        <li>Your portfolio value or financial performance</li>
+        <li>Device identifiers or advertising IDs</li>
+        <li>Biometric data</li>
+        <li>Cookies or tracking pixels</li>
+        <li>Analytics or crash data</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>3. How We Use Information</h2>
+      <p>Stock-Dawgg uses your locally stored data solely to:</p>
+      <ul>
+        <li>Display real-time prices for your watchlist holdings</li>
+        <li>Calculate portfolio value, gain/loss, and portfolio weight</li>
+        <li>Generate price alerts and push notifications</li>
+        <li>Generate monthly PDF reports entirely on your device</li>
+        <li>Display dividend calendar information</li>
+        <li>Display market news filtered to your holdings</li>
+      </ul>
+      <p>All processing happens on your device. No data is sent to Digi-Dawgg Labs LLC at any time.</p>
+    </div>
+
+    <div class="section">
+      <h2>4. Data Storage</h2>
+      <p>All user data is stored locally on your device. Stock-Dawgg does not use cloud storage, remote databases, or server-side data processing. Locally stored data is protected by your device's operating system encryption — Android Keystore on Android 10 and above, and iOS Keychain on iOS 16 and above. Stock-Dawgg requires these minimum OS versions, ensuring all users benefit from native hardware-backed encryption.</p>
+      <p>PDF reports generated by Stock-Dawgg are saved to your device's Downloads folder under Downloads/StockDawgg/. These files are never uploaded, transmitted, or backed up to any cloud service by Stock-Dawgg.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. Third-Party Services</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Data Shared</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Twelve Data</strong></td>
+            <td>Real-time stock and crypto prices</td>
+            <td>Ticker symbols only</td>
+          </tr>
+          <tr>
+            <td><strong>MarketAux</strong></td>
+            <td>Market news headlines and summaries</td>
+            <td>Ticker symbols only</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>These services have their own privacy policies. We encourage you to review them. No personally identifiable information is shared with any third-party service.</p>
+    </div>
+
+    <div class="section">
+      <h2>6. External Browser and News Articles</h2>
+      <p>Stock-Dawgg displays market news headlines and summaries inside the app. No external browser is opened automatically.</p>
+      <p>If you choose to read a full news article by tapping "Read Full Article in Browser," you will leave the Stock-Dawgg environment and be taken to a third-party website in your device's browser. At that point, the URL of the article may contain the ticker symbol of the stock being researched, and third-party websites may collect this information through cookies, tracking pixels, and browser fingerprinting.</p>
+      <p>We recommend using DuckDuckGo browser when opening external articles. DuckDuckGo blocks trackers and does not build advertising profiles based on your browsing activity.</p>
+    </div>
+
+    <div class="section">
+      <h2>7. Notifications</h2>
+      <p>Stock-Dawgg uses your device's local notification system to deliver price alerts, ex-dividend date alerts, and monthly report notifications. Ex-dividend date alerts fire automatically as soon as an upcoming ex-date is available — up to 3 days before — giving you the earliest possible notice to act before the T+1 settlement deadline. Notifications are generated on-device and do not require transmission of personal data to any server.</p>
+    </div>
+
+    <div class="section">
+      <h2>8. Children's Privacy</h2>
+      <p>Stock-Dawgg is not directed at children under the age of 13. We do not knowingly collect any information from children under 13. If you believe a child under 13 has provided information through Stock-Dawgg, please contact us and we will address the situation promptly.</p>
+    </div>
+
+    <div class="section">
+      <h2>9. Data Security</h2>
+      <p>Because Stock-Dawgg stores all data locally on your device, the security of your data is protected by your device's operating system — specifically, Android Keystore on Android 10 (API 29) and above, and iOS Keychain on iOS 16 and above. Stock-Dawgg requires these minimum OS versions, ensuring that all users benefit from native hardware-backed encryption without any additional configuration.</p>
+      <p>We strongly encourage all users to enable screen lock and biometric authentication. These features complement OS-level encryption and are your primary defense against unauthorized physical access to your device and the locally stored financial data within Stock-Dawgg.</p>
+    </div>
+
+    <div class="section">
+      <h2>10. Data Deletion</h2>
+      <p>To delete all Stock-Dawgg data from your device, uninstall the app. All locally stored data — watchlist, portfolio, preferences, and cached data — is permanently deleted upon uninstallation. PDF reports saved to Downloads/StockDawgg/ must be deleted manually if desired.</p>
+      <p>Stock-Dawgg does not retain any copy of your data after uninstallation because your data was never on our servers to begin with.</p>
+    </div>
+
+    <div class="section">
+      <h2>11. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in the app, applicable law, or our practices. Changes will be reflected in the app and on this website with an updated effective date. Continued use of Stock-Dawgg after changes are posted constitutes acceptance of the updated Privacy Policy.</p>
+    </div>
+
+    <div class="section">
+      <h2>12. Contact</h2>
+      <div class="contact-block">
+        <p>
+          <strong>Digi-Dawgg Labs LLC — Stock-Dawgg</strong>
+          support@digidawgg.com (coming soon)<br>
+          digidawgg.com
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-left">© 2026 Digi-Dawgg Labs LLC &nbsp;·&nbsp; Stock-Dawgg</p>
+    <ul class="footer-links">
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
