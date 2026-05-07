@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -114,15 +115,13 @@
       margin-bottom: 6px;
     }
 
-    .contact-card a {
+    .email-text {
       font-size: 14px;
       font-weight: 500;
       color: var(--gold-dark);
-      text-decoration: none;
-    }
-
-    .contact-card a:hover {
-      text-decoration: underline;
+      display: inline-block;
+      margin-top: 8px;
+      user-select: all;
     }
 
     footer {
@@ -139,6 +138,21 @@
       color: var(--text-faint);
     }
 
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -147,7 +161,8 @@
     @media (max-width: 600px) {
       nav { padding: 0 20px; }
       main { padding: 60px 24px; }
-      footer { padding: 20px; }
+      footer { padding: 20px; flex-direction: column; gap: 16px; text-align: center; }
+      .footer-links { justify-content: center; }
     }
   </style>
 </head>
@@ -163,12 +178,16 @@
     <p class="sub">We're building something new. Check back soon.</p>
     <div class="contact-card">
       <p>Get in touch</p>
-      <a href="mailto:digi.dawgg.labs@gmail.com">digi.dawgg.labs@gmail.com</a>
+      <span class="email-text">digi.dawgg.labs@gmail.com</span>
     </div>
   </main>
 
   <footer>
     <p class="footer-left">© 2026 Digi-Dawgg Labs LLC</p>
+    <ul class="footer-links">
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
   </footer>
 
 </body>
