@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digi-Dawgg Labs LLC</title>
-  <meta name="description" content="Digi-Dawgg Labs LLC — something's coming.">
+  <title>Stock-Dawgg — Real-Time Stock &amp; Crypto Alerts</title>
+  <meta name="description" content="Stock-Dawgg watches your portfolio around the clock and barks when the market moves. Your data never leaves your device.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -23,11 +22,10 @@
       --bg: #ffffff;
       --bg-subtle: #fafaf8;
       --border: rgba(0,0,0,0.08);
+      --border-strong: rgba(0,0,0,0.12);
     }
 
-    html, body {
-      height: 100%;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -36,18 +34,22 @@
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
 
+    /* NAV */
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       padding: 0 48px;
       height: 60px;
       display: flex;
       align-items: center;
-      background: var(--bg);
+      justify-content: space-between;
     }
 
     .nav-logo {
@@ -59,77 +61,445 @@
       text-decoration: none;
     }
 
-    main {
-      flex: 1;
+    .nav-links {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 48px;
-      text-align: center;
-      background: var(--bg-subtle);
+      gap: 32px;
+      list-style: none;
     }
 
-    .eyebrow {
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 48px 64px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--gold-dark);
-      margin-bottom: 24px;
-      animation: fadeUp 0.6s ease both;
+      margin-bottom: 32px;
     }
 
-    h1 {
+    .hero-logo {
+      width: 680px;
+      max-width: 95%;
+      margin: 0 auto 40px;
+      display: block;
+      border-radius: 16px;
+      box-shadow: 0 2px 32px rgba(0,0,0,0.08);
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(36px, 5vw, 56px);
+      font-size: clamp(36px, 5vw, 52px);
       font-weight: 400;
-      color: var(--text);
       line-height: 1.15;
+      color: var(--text);
       margin-bottom: 20px;
-      animation: fadeUp 0.6s 0.1s ease both;
+      animation: fadeUp 0.7s 0.1s ease both;
     }
 
-    .sub {
-      font-size: 16px;
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 17px;
       font-weight: 300;
       color: var(--text-muted);
-      max-width: 360px;
+      max-width: 440px;
+      margin: 0 auto 40px;
       line-height: 1.7;
-      margin-bottom: 40px;
-      animation: fadeUp 0.6s 0.2s ease both;
+      animation: fadeUp 0.7s 0.2s ease both;
     }
 
-    .contact-card {
-      background: var(--gold-light);
-      border: 1px solid var(--gold-border);
-      border-radius: 10px;
-      padding: 20px 32px;
-      animation: fadeUp 0.6s 0.3s ease both;
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.3s ease both;
     }
 
-    .contact-card p {
-      font-size: 13px;
+    .badge {
+      background: #fff;
+      border: 1px solid var(--border-strong);
+      border-radius: 100px;
+      padding: 7px 16px;
+      font-size: 12px;
       font-weight: 400;
-      color: var(--gold-dark);
-      margin-bottom: 6px;
+      color: var(--text-muted);
+      letter-spacing: 0.01em;
     }
 
-    .email-text {
-      font-size: 14px;
+    /* DOWNLOAD BUTTONS */
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 15px;
       font-weight: 500;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .dl-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+    .dl-apple { background: #1a1a1a; color: #fff; }
+    .dl-google { background: #1a73e8; color: #fff; }
+
+    /* PRICING */
+    .pricing {
+      padding: 72px 48px 64px;
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .pricing-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: var(--gold-dark);
-      display: inline-block;
-      margin-top: 8px;
-      user-select: all;
+      margin-bottom: 14px;
+    }
+    .pricing h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .pricing-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+    .founding-banner {
+      background: linear-gradient(135deg, #fef3cd, #fde8a0);
+      color: #5a4000;
+      border: 1px solid var(--gold);
+      border-radius: 10px;
+      padding: 16px 24px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0 auto 36px;
+      max-width: 640px;
+      text-align: center;
+    }
+    .founding-banner strong { color: #7a5000; }
+
+    .pricing-cards {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      max-width: 720px;
+      margin: 0 auto 32px;
+    }
+    .pricing-card {
+      flex: 1;
+      min-width: 260px;
+      max-width: 320px;
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      padding: 36px 32px;
+      background: #fff;
+      text-align: left;
+      position: relative;
+    }
+    .pricing-card.featured {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px var(--gold);
+    }
+    .pricing-card-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .pricing-card-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 12px;
+    }
+    .pricing-card-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-card-price sup {
+      font-size: 20px;
+      vertical-align: super;
+    }
+    .pricing-card-period {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .pricing-card-features {
+      list-style: none;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 2;
+    }
+    .pricing-card-features li::before {
+      content: '✓ ';
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .pricing-note {
+      font-size: 12px;
+      color: var(--text-faint);
+      font-style: italic;
     }
 
+    /* BREACH SECTION */
+    .breaches {
+      padding: 72px 48px 56px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .breaches-header {
+      max-width: 680px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .breaches-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #a33;
+      margin-bottom: 14px;
+    }
+
+    .breaches-header h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .breaches-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .breach-table-wrap {
+      overflow-x: auto;
+      margin-bottom: 16px;
+    }
+
+    .breach-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .breach-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border-strong);
+      background: var(--bg-subtle);
+      white-space: nowrap;
+    }
+
+    .breach-table td {
+      padding: 14px 16px;
+      font-weight: 300;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .breach-table td:first-child {
+      font-weight: 500;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .breach-table td:nth-child(2) {
+      font-weight: 500;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .breach-table tr:last-child td { border-bottom: none; }
+    .breach-table tr:hover td { background: var(--bg-subtle); }
+
+    .breaches-source {
+      font-size: 11px;
+      color: var(--text-faint);
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+
+    .breaches-callout {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: #fff5f5;
+      border: 1px solid #f5c6c6;
+      border-radius: var(--border-radius-lg);
+      padding: 24px 32px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .breaches-callout-stat {
+      font-family: 'DM Serif Display', serif;
+      font-size: 52px;
+      font-weight: 400;
+      color: #a33;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .breaches-callout p {
+      font-size: 14px;
+      font-weight: 300;
+      color: #7a2020;
+      line-height: 1.7;
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feature {
+      padding: 40px 36px;
+      border-right: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    .feature:last-child { border-right: none; }
+    .feature:hover { background: var(--bg-subtle); }
+
+    .feature-marker {
+      width: 32px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .feature p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* PRIVACY CALLOUT */
+    .privacy-strip {
+      background: var(--gold-light);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .privacy-strip-icon {
+      width: 36px;
+      height: 36px;
+      background: #fff;
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .privacy-strip-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .privacy-strip-text {
+      font-size: 13px;
+      color: var(--gold-dark);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .privacy-strip-text strong {
+      font-weight: 500;
+    }
+
+    /* FOOTER */
     footer {
-      padding: 24px 48px;
+      padding: 28px 48px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--bg);
+      background: var(--bg-subtle);
       border-top: 1px solid var(--border);
     }
 
@@ -153,15 +523,23 @@
 
     .footer-links a:hover { color: var(--text); }
 
+    /* ANIMATIONS */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
+      from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 600px) {
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .breaches { padding: 48px 24px 40px; }
+      .breaches-callout { flex-direction: column; gap: 12px; padding: 20px 24px; text-align: center; }
       nav { padding: 0 20px; }
-      main { padding: 60px 24px; }
-      footer { padding: 20px; flex-direction: column; gap: 16px; text-align: center; }
+      .hero { padding: 56px 24px 48px; }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .feature { border-right: none; border-bottom: 1px solid var(--border); }
+      .feature:last-child { border-bottom: none; }
+      .privacy-strip { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 16px; text-align: center; }
       .footer-links { justify-content: center; }
     }
   </style>
@@ -169,27 +547,229 @@
 <body>
 
   <nav>
-    <span class="nav-logo">DIGI-DAWGG LABS</span>
+    <a href="/" class="nav-logo">STOCK-DAWGG</a>
+    <ul class="nav-links">
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
   </nav>
 
-  <main>
-    <p class="eyebrow">Digi-Dawgg Labs LLC</p>
-    <h1>Something's coming.</h1>
-    <p class="sub">We're building something new. Check back soon.</p>
-    <div class="contact-card">
-      <p>Get in touch</p>
-      <span class="email-text">digi.dawgg.labs@gmail.com</span>
+  <section class="hero">
+    <p class="hero-eyebrow">Real-time stock &amp; crypto alerts</p>
+    <img
+      src="dawgg_logo_cleaned.png"
+      alt="Stock-Dawgg — a stock chart in the shape of a dog"
+      class="hero-logo"
+    >
+    <h1>Your portfolio.<br><em>Your phone.</em><br>Nobody else's business.</h1>
+    <p class="hero-sub">Stock-Dawgg watches your holdings around the clock and barks when the market moves. Your portfolio stays on your device. No accounts. No nonsense.</p>
+    <div class="hero-badges">
+      <span class="badge">iOS &amp; Android</span>
+      <span class="badge">No account required</span>
+      <span class="badge">Portfolio data never leaves your device</span>
     </div>
-  </main>
+    <div class="hero-download" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:32px;">
+      <a href="https://apps.apple.com/app/stock-dawgg/id6745165540" class="dl-btn dl-apple" aria-label="Download on the App Store">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span>App Store</span>
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.digidawgg.stocktracker" class="dl-btn dl-google" aria-label="Get it on Google Play">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2l13.1-7.56-2.81-2.82-11.28 10.18zm15.8-9.09L16.65 13l-13.47-7.67c-.35-.2-.7-.24-1-.1l11.28 10.18 5.52-3.19a1.1 1.1 0 00-.98-.34zm.98-5.25l-5.51-3.18L3.18.24C3.48.08 3.83.01 4.18.17L17.65 7.84l2.31 1.33c.89.51.89 1.74 0 2.25zm-17.79-8.2c-.04.35.03.73.2 1.09L13.84 13 3.17 2.32z"/></svg>
+        <span>Google Play</span>
+      </a>
+    </div>
+    <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:14px;font-weight:300;">Start your 7-day free trial — no payment required until day 8.</p>
+  </section>
+
+  <section class="pricing">
+    <p class="pricing-eyebrow">Simple, honest pricing</p>
+    <h2>One plan. Everything included.</h2>
+    <p class="pricing-sub">No tiers, no feature gates, no surprises. Every subscriber gets the full Stock-Dawgg experience.</p>
+    <div class="founding-banner">
+      🐾 <strong>Founding Member Offer</strong> — Subscribe within 90 days of launch and lock your rate for 2 years. New features included at no extra charge during your locked period.
+      <div id="founding-countdown" style="margin-top:10px;font-size:13px;font-weight:400;color:#7a5000;"></div>
+    </div>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <p class="pricing-card-label">Monthly</p>
+        <p class="pricing-card-price"><sup>$</sup>2.99</p>
+        <p class="pricing-card-period">per month, billed monthly</p>
+        <p style="font-size:12px;color:#2d7a2d;font-weight:500;margin-bottom:16px;">✓ 7-day free trial included</p>
+        <ul class="pricing-card-features">
+          <li>Real-time price alerts</li>
+          <li>Stocks &amp; crypto watchlist</li>
+          <li>Dividend calendar</li>
+          <li>Monthly income reports</li>
+          <li>AES-256 encrypted backups</li>
+          <li>iOS &amp; Android</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured">
+        <span class="pricing-card-tag">Best value — save 44%</span>
+        <p class="pricing-card-label">Annual</p>
+        <p class="pricing-card-price"><sup>$</sup>19.99</p>
+        <p class="pricing-card-period">per year — just $1.67/month</p>
+        <p style="font-size:12px;color:#2d7a2d;font-weight:500;margin-bottom:16px;">✓ 7-day free trial included</p>
+        <ul class="pricing-card-features">
+          <li>Everything in Monthly</li>
+          <li>Two months free</li>
+          <li>Founding member rate</li>
+          <li>Rate locked for 2 years</li>
+          <li>Priority support</li>
+          <li>iOS &amp; Android</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pricing-note">Cancel anytime through the App Store or Google Play. No refunds for partial periods.</p>
+  </section>
+
+  <section class="breaches">
+    <div class="breaches-header">
+      <p class="breaches-eyebrow">Why it matters</p>
+      <h2>The financial sector is ground zero for data breaches.</h2>
+      <p class="breaches-sub">U.S. data breaches hit a record high in 2024 — 3,322 reported incidents. Financial services firms led all industries with 739 breaches. Most investment apps store your portfolio on their servers. That makes you a target every time they get hit.</p>
+    </div>
+    <div class="breach-table-wrap">
+      <table class="breach-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Company</th>
+            <th>People Affected</th>
+            <th>What Was Exposed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2017</td>
+            <td>Equifax</td>
+            <td>147 million Americans</td>
+            <td>Social Security numbers, financial data, personal information</td>
+          </tr>
+          <tr>
+            <td>2019</td>
+            <td>First American Financial</td>
+            <td>885 million records</td>
+            <td>Mortgage records, bank account details, tax documents, SSNs</td>
+          </tr>
+          <tr>
+            <td>2019</td>
+            <td>Capital One</td>
+            <td>106 million customers</td>
+            <td>SSNs, bank account numbers, credit scores</td>
+          </tr>
+          <tr>
+            <td>2021</td>
+            <td>Cash App (Block)</td>
+            <td>8.2 million customers</td>
+            <td>Brokerage account data — stolen by a former employee</td>
+          </tr>
+          <tr>
+            <td>2024</td>
+            <td>Santander Bank</td>
+            <td>~30 million customers</td>
+            <td>Customer financial data and employee records</td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td>TransUnion</td>
+            <td>4.5 million individuals</td>
+            <td>Personal financial information</td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td>Pathstone Family Office</td>
+            <td>641,000 wealth mgmt clients</td>
+            <td>SSNs, dates of birth, detailed financial profiles</td>
+          </tr>
+          <tr>
+            <td>2026</td>
+            <td>Heritage Bank</td>
+            <td>182,793 customers</td>
+            <td>Personal financial information exposed during March–April breach</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="breaches-source">Sources: Identity Theft Resource Center (ITRC), Barracuda Networks 2026 Data Breach Report, Reuters, The New York Times, Bloomberg.</p>
+    <div class="breaches-callout">
+      <span class="breaches-callout-stat">88%</span>
+      <p>of people who received a data breach notification experienced at least one negative consequence — phishing attempts, spam, or attempted account takeover.</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <div class="feature-marker"></div>
+      <h3>Real-time alerts</h3>
+      <p>Customizable thresholds for stocks and crypto separately. Dawgg barks the moment a holding moves beyond your limit — day, night, or extended hours.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-marker"></div>
+      <h3>Portfolio tracking</h3>
+      <p>Monitor holdings across multiple brokers in one place. Includes a dividend calendar so you never miss an ex-dividend date.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-marker"></div>
+      <h3>Monthly reports</h3>
+      <p>Generate your PDF portfolio report on demand — built entirely on your device. Never uploaded. Never shared. Yours alone.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-marker"></div>
+      <h3>News &amp; market intelligence</h3>
+      <p>Market news filtered to only your holdings — no noise, no rabbit holes. Headlines and summaries read in-app. No browser. No trackers. You choose when to go further.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-marker"></div>
+      <h3>Broker CSV import</h3>
+      <p>Import your portfolio directly from Fidelity, Schwab, Vanguard, Robinhood, and more. Stock-Dawgg auto-detects your broker format and merges holdings with weighted average cost — no manual entry required.</p>
+    </div>
+  </section>
+
+  <div class="privacy-strip">
+    <div class="privacy-strip-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    </div>
+    <p class="privacy-strip-text">
+      <strong>Your portfolio data never leaves your device.</strong> Holdings, buy prices, and financial details are stored locally and encrypted by your device's built-in OS security. Our servers only see anonymous device tokens needed to deliver price alerts — never your portfolio.
+    </p>
+  </div>
 
   <footer>
-    <p class="footer-left">© 2026 Digi-Dawgg Labs LLC</p>
+    <p class="footer-left">© 2026 Digi-Dawgg Labs LLC &nbsp;·&nbsp; Stock-Dawgg</p>
     <ul class="footer-links">
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="support.html">Support</a></li>
-      <li><a href="tos.html">Terms of Service</a></li>
     </ul>
   </footer>
 
+  <script>
+    // Founding member countdown — set LAUNCH_DATE to your actual launch date
+    // Format: 'YYYY-MM-DD'
+    const LAUNCH_DATE = '2026-07-24';
+
+    function updateCountdown() {
+      const el = document.getElementById('founding-countdown');
+      if (!el || LAUNCH_DATE === 'LAUNCH_DATE_HERE') return;
+      const launch = new Date(LAUNCH_DATE);
+      const end = new Date(launch);
+      end.setDate(end.getDate() + 90);
+      const now = new Date();
+      const diff = end - now;
+      if (diff <= 0) {
+        el.textContent = 'Founding member pricing has ended.';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      // Show countdown regardless of whether launch date is in future or past
+      el.textContent = `Founding member pricing ends in ${days} day${days !== 1 ? 's' : ''} and ${hours} hour${hours !== 1 ? 's' : ''}.`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+  </script>
 </body>
 </html>
