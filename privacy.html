@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Stock-Dawgg™</title>
-  <meta name="description" content="Stock-Dawgg™ privacy policy. Your financial data never leaves your device.">
+  <meta name="description" content="Stock-Dawgg™ privacy policy. Your portfolio never leaves your device.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -291,54 +291,56 @@
   <div class="page-header">
     <p>Digi-Dawgg Labs LLC</p>
     <h1>Privacy Policy</h1>
-    <span class="meta">Effective Date: August 3, 2026 &nbsp;·&nbsp; Last Updated: September 11, 2026</span>
+    <span class="meta">Effective Date: August 3, 2026 &nbsp;·&nbsp; Last Updated: October 20, 2026</span>
   </div>
 
   <div class="content">
 
     <div class="tagline">
-      Your financial data never leaves your device. This is not a policy limitation — it is the architecture.
+      Your portfolio never leaves your device. Your holdings, share counts, and cost basis stay on your phone — this is not a policy limitation, it is the architecture.
     </div>
 
     <div class="section">
       <h2>1. Overview</h2>
       <p>Stock-Dawgg™ is built on a single principle: your financial data belongs to you. This Privacy Policy explains what information Stock-Dawgg™ collects, how it is used, and how it is protected.</p>
-      <p>The short version — your portfolio data never leaves your device. Stock-Dawgg does not operate servers. Stock-Dawgg does not store your data in the cloud. Stock-Dawgg does not sell your data. Stock-Dawgg does not show ads.</p>
+      <p>The short version — your portfolio data never leaves your device. Stock-Dawgg has no user accounts and never asks for your name or email address. We run a minimal server only to deliver market data and price alerts, and it holds no names, emails, or portfolio holdings. Stock-Dawgg does not sell your data. Stock-Dawgg does not show ads. Stock-Dawgg does not track you across other apps or websites.</p>
     </div>
 
     <div class="section">
       <h2>2. Information We Collect</h2>
-      <p><strong>2a. Information You Provide</strong></p>
+      <p><strong>2a. Information Stored Only on Your Device</strong></p>
       <p>The following information is entered by you and stored exclusively on your device:</p>
       <ul>
-        <li>Stock and crypto symbols added to your watchlist</li>
         <li>Portfolio holdings — ticker symbol, number of shares, buy price, broker name</li>
-        <li>Alert threshold preferences — stock and crypto separately</li>
         <li>Dividend frequency preferences per holding</li>
         <li>Extended hours alert preferences</li>
+        <li>Monthly PDF reports</li>
       </ul>
-      <p>None of this information is transmitted to Digi-Dawgg Labs LLC or any third party. It exists only on your device.</p>
+      <p>None of this information is transmitted to Digi-Dawgg Labs LLC or any third party.</p>
 
-      <p><strong>2b. Information Collected Automatically</strong></p>
-      <p>Stock-Dawgg makes API calls to the following third-party services to retrieve market data:</p>
+      <p><strong>2b. Information Used for Price Alerts</strong></p>
+      <p>To send you price alerts, our alert service stores the following — and nothing more:</p>
       <ul>
-        <li>Tiingo — real-time stock price data and dividend data</li>
-        <li>CoinGecko — real-time cryptocurrency price data (true 24-hour rolling change)</li>
-        <li>Alpha Vantage — dividend history and ex-dividend dates</li>
-        <li>MarketAux — market news headlines and summaries</li>
-        <li>Firebase (Google) — anonymous device token registration for push notification delivery</li>
-        <li>AWS Lambda / Supabase — anonymous price alert monitoring service (stores only device token, watchlist symbols, and alert thresholds — no personally identifiable information)</li>
+        <li>An anonymous push notification token and a random app-generated device ID</li>
+        <li>The ticker symbols on your watchlist (ticker names only)</li>
+        <li>Your alert threshold settings</li>
       </ul>
-      <p>These calls transmit only stock ticker symbols — never your name, email address, portfolio value, share count, cost basis, or any personally identifiable information.</p>
+      <p>This information is not linked to your name, email address, or any account, and it never includes share counts, cost basis, or portfolio value.</p>
 
-      <p><strong>2c. Information We Do Not Collect</strong></p>
+      <p><strong>2c. Subscription Information</strong></p>
+      <p>Subscriptions are purchased and billed by Apple (App Store) or Google (Google Play). Digi-Dawgg Labs LLC never receives your payment card details, name, or billing address. We use RevenueCat to confirm whether your subscription is active. RevenueCat receives an anonymous app user ID and your subscription purchase history from Apple or Google.</p>
+
+      <p><strong>2d. Market Data Requests</strong></p>
+      <p>When the app shows prices, charts, dividends, or news, it sends the ticker symbols it needs to our market data server, which retrieves the data from our licensed providers (Tiingo and CoinGecko). Our server records only the type of request, whether it succeeded, and how long it took. It does not record which tickers you asked for, and it does not store your IP address or any device identifier. The providers receive requests from our server, not from your device.</p>
+
+      <p><strong>2e. Information We Do Not Collect</strong></p>
       <p>Stock-Dawgg does not collect, store, or transmit any of the following:</p>
       <ul>
         <li>Your name or email address</li>
         <li>Your location</li>
-        <li>Your portfolio value or financial performance</li>
-        <li>Device identifiers or advertising IDs</li>
-        <li>Biometric data</li>
+        <li>Your portfolio holdings, value, or financial performance</li>
+        <li>Advertising IDs</li>
+        <li>Contacts, photos, or biometric data</li>
         <li>Cookies or tracking pixels</li>
         <li>Analytics or crash data</li>
       </ul>
@@ -346,22 +348,24 @@
 
     <div class="section">
       <h2>3. How We Use Information</h2>
-      <p>Stock-Dawgg uses your locally stored data solely to:</p>
+      <p>Stock-Dawgg uses your information solely to:</p>
       <ul>
         <li>Display real-time prices for your watchlist holdings</li>
-        <li>Calculate portfolio value, gain/loss, and portfolio weight</li>
-        <li>Generate price alerts and push notifications</li>
-        <li>Generate monthly and annual PDF reports entirely on your device</li>
+        <li>Calculate portfolio value, gain/loss, and portfolio weight — on your device</li>
+        <li>Send price alerts and push notifications</li>
+        <li>Generate monthly PDF reports entirely on your device</li>
         <li>Display dividend calendar information</li>
         <li>Display market news filtered to your holdings</li>
+        <li>Confirm your subscription status</li>
       </ul>
-      <p>All processing happens on your device. No data is sent to Digi-Dawgg Labs LLC at any time.</p>
+      <p>We do not use your information for advertising, profiling, or any purpose other than running the app.</p>
     </div>
 
     <div class="section">
       <h2>4. Data Storage</h2>
-      <p>All user data is stored locally on your device. Stock-Dawgg does not use cloud storage, remote databases, or server-side data processing. Locally stored data is protected by your device's operating system encryption — Android Keystore on Android 10 and above, and iOS Keychain on iOS 16 and above. Stock-Dawgg requires these minimum OS versions, ensuring all users benefit from native hardware-backed encryption.</p>
-      <p>PDF reports generated by Stock-Dawgg are saved to your device's Downloads folder under Downloads/StockDawgg/. These files are never uploaded, transmitted, or backed up to any cloud service by Stock-Dawgg.</p>
+      <p>Your portfolio and preferences are stored locally on your device and protected by your device's operating system encryption — Android Keystore on Android 10 and above, and iOS Keychain on iOS 16 and above. Stock-Dawgg requires these minimum OS versions, ensuring all users benefit from native hardware-backed encryption.</p>
+      <p>The only information stored on our servers is the price alert information described in Section 2b. It is stored in the United States with our hosting providers, Amazon Web Services and Supabase.</p>
+      <p>PDF reports generated by Stock-Dawgg are saved on your device — on Android, in the Downloads folder under Downloads/StockDawgg/; on iPhone, in the Files app under On My iPhone › Stock-Dawgg. These files are never uploaded, transmitted, or backed up to any cloud service by Stock-Dawgg.</p>
     </div>
 
     <div class="section">
@@ -377,51 +381,52 @@
         <tbody>
           <tr>
             <td><strong>Tiingo</strong></td>
-            <td>Real-time stock prices and dividend data</td>
-            <td>Ticker symbols only</td>
+            <td>Stock prices, dividend data, and market news</td>
+            <td>Ticker symbols only, sent from our server</td>
           </tr>
           <tr>
             <td><strong>CoinGecko</strong></td>
-            <td>Real-time cryptocurrency prices (24-hour rolling change)</td>
-            <td>Ticker symbols only</td>
-          </tr>
-          <tr>
-            <td><strong>Alpha Vantage</strong></td>
-            <td>Dividend history and ex-dividend dates</td>
-            <td>Ticker symbols only</td>
-          </tr>
-          <tr>
-            <td><strong>MarketAux</strong></td>
-            <td>Market news headlines and summaries</td>
-            <td>Ticker symbols only</td>
+            <td>Cryptocurrency prices (24-hour rolling change)</td>
+            <td>Coin names only, sent from our server</td>
           </tr>
           <tr>
             <td><strong>Firebase (Google)</strong></td>
             <td>Push notification delivery</td>
-            <td>Anonymous device token only</td>
+            <td>Anonymous device token</td>
           </tr>
           <tr>
-            <td><strong>AWS Lambda / Supabase</strong></td>
-            <td>Price alert monitoring service</td>
-            <td>Anonymous device token, watchlist symbols, alert thresholds</td>
+            <td><strong>Amazon Web Services / Supabase</strong></td>
+            <td>Hosting for our market data server and price alert service</td>
+            <td>Anonymous device token and device ID, watchlist symbols, alert thresholds</td>
+          </tr>
+          <tr>
+            <td><strong>RevenueCat</strong></td>
+            <td>Subscription status</td>
+            <td>Anonymous app user ID, subscription purchase history</td>
+          </tr>
+          <tr>
+            <td><strong>Apple / Google</strong></td>
+            <td>Subscription purchases and billing</td>
+            <td>Handled by your App Store or Google Play account under their own policies</td>
           </tr>
         </tbody>
       </table>
-      <p>These services have their own privacy policies. We encourage you to review them. No personally identifiable information is shared with any third-party service.</p>
+      <p>These services have their own privacy policies. We encourage you to review them. We do not sell or share your information with anyone for advertising or marketing.</p>
     </div>
 
     <div class="section">
       <h2>6. External Browser and News Articles</h2>
       <p>Stock-Dawgg displays market news headlines and summaries inside the app. No external browser is opened automatically.</p>
-      <p>If you choose to read a full news article by tapping "Read Full Article in Browser," you will leave the Stock-Dawgg environment and be taken to a third-party website in your device's browser. At that point, the URL of the article may contain the ticker symbol of the stock being researched, and third-party websites may collect this information through cookies, tracking pixels, and browser fingerprinting.</p>
+      <p>If you choose to read a full news article by tapping it, you will leave the Stock-Dawgg environment and be taken to a third-party website in your device's browser. At that point, the URL of the article may contain the ticker symbol of the stock being researched, and third-party websites may collect this information through cookies, tracking pixels, and browser fingerprinting.</p>
       <p>We recommend using DuckDuckGo browser when opening external articles. DuckDuckGo blocks trackers and does not build advertising profiles based on your browsing activity.</p>
     </div>
 
     <div class="section">
       <h2>7. Notifications</h2>
       <p>Stock-Dawgg delivers two types of notifications:</p>
-      <p><strong>Price alerts</strong> are delivered via a privacy-preserving backend service. When you add symbols to your watchlist, Stock-Dawgg registers an anonymous device token with our alert service (AWS Lambda and Supabase). This service stores only your anonymous device token, your watchlist symbols (ticker names only), and your alert threshold preferences. No portfolio data, share counts, cost basis, or personally identifiable information is ever transmitted. The backend monitors prices every 2 minutes and sends a push notification via Firebase (Google) when a holding crosses your threshold. Your device token is automatically removed if you have not opened the app in 30 days.</p>
-      <p><strong>Ex-dividend date alerts and monthly report notifications</strong> are generated entirely on-device and do not require any data transmission.</p>
+      <p><strong>Price alerts</strong> are delivered by our alert service. When you add symbols to your watchlist, Stock-Dawgg registers the information described in Section 2b. During market hours the service checks prices every few minutes and sends a push notification through Firebase (Google) when a symbol crosses your threshold. When a device's push token is no longer valid — for example, after the app is uninstalled — its record is automatically deleted.</p>
+      <p><strong>Ex-dividend date alerts and monthly report notifications</strong> are generated entirely on-device.</p>
+      <p>You can turn off notifications at any time in your device's settings.</p>
     </div>
 
     <div class="section">
@@ -431,24 +436,25 @@
 
     <div class="section">
       <h2>9. Data Security</h2>
-      <p>Because Stock-Dawgg stores all data locally on your device, the security of your data is protected by your device's operating system — specifically, Android Keystore on Android 10 (API 29) and above, and iOS Keychain on iOS 16 and above. Stock-Dawgg requires these minimum OS versions, ensuring that all users benefit from native hardware-backed encryption without any additional configuration.</p>
+      <p>Data on your device is protected by your device's operating system — specifically, Android Keystore on Android 10 (API 29) and above, and iOS Keychain on iOS 16 and above. All communication between the app and our servers is encrypted in transit (HTTPS). Our alert database is not publicly readable.</p>
       <p>We strongly encourage all users to enable screen lock and biometric authentication. These features complement OS-level encryption and are your primary defense against unauthorized physical access to your device and the locally stored financial data within Stock-Dawgg.</p>
     </div>
 
     <div class="section">
       <h2>10. Data Breach</h2>
-      <p>Because Digi-Dawgg Labs LLC stores no user data on any server, a data breach of our systems cannot expose your financial information. Your data exists only on your device. And since we never share your information with third parties, you will never receive a breach letter because one of our partners got hacked.</p>
+      <p>Our servers hold no names, email addresses, payment details, or portfolio holdings, so a breach of our systems would not expose that information. The only information on our servers is the anonymous price alert information described in Section 2b. If we ever learn of unauthorized access to it, we will post a notice on this website and in the app.</p>
     </div>
 
     <div class="section">
       <h2>11. Data Deletion</h2>
-      <p>To delete all Stock-Dawgg data from your device, uninstall the app. All locally stored data — watchlist, portfolio, preferences, and cached data — is permanently deleted upon uninstallation. PDF reports saved to Downloads/StockDawgg/ must be deleted manually if desired.</p>
-      <p>Stock-Dawgg does not retain any copy of your data after uninstallation because your data was never on our servers to begin with.</p>
+      <p>To delete all Stock-Dawgg data from your device, uninstall the app. All locally stored data — watchlist, portfolio, preferences, and cached data — is permanently deleted upon uninstallation. On iPhone, saved PDF reports are deleted with the app. On Android, PDF reports saved to Downloads/StockDawgg/ must be deleted manually if desired.</p>
+      <p>After you uninstall, your price alert record is deleted from our servers automatically the next time our alert service finds that the device's push token is no longer valid. You can also email us to request deletion at any time.</p>
+      <p>Subscription purchase records are kept by Apple or Google and RevenueCat as required for billing and tax purposes. To cancel a subscription, use your App Store or Google Play account settings — uninstalling the app does not cancel it.</p>
     </div>
 
     <div class="section">
       <h2>12. Changes to This Policy</h2>
-      <p>We may update this Privacy Policy from time to time to reflect changes in the app, applicable law, or our practices. Changes will be reflected in the app and on this website with an updated effective date. Continued use of Stock-Dawgg after changes are posted constitutes acceptance of the updated Privacy Policy.</p>
+      <p>We may update this Privacy Policy from time to time to reflect changes in the app, applicable law, or our practices. Changes will be reflected in the app and on this website with an updated date. Continued use of Stock-Dawgg after changes are posted constitutes acceptance of the updated Privacy Policy.</p>
     </div>
 
     <div class="section">
@@ -456,7 +462,9 @@
       <div class="contact-block">
         <p>
           <strong>Digi-Dawgg Labs LLC — Stock-Dawgg</strong>
-          support@digidawgg.com (coming soon)<br>
+          402 W Palm Valley Blvd, Ste A, PMB 185<br>
+          Round Rock, TX 78664<br>
+          support@digidawgg.com<br>
           digidawgg.com
         </p>
       </div>
@@ -469,7 +477,6 @@
     <ul class="footer-links">
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="support.html">Support</a></li>
-      <li><a href="tos.html">Terms of Service</a></li>
     </ul>
   </footer>
 
