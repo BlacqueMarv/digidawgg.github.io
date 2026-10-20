@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use — Stock-Dawgg™</title>
+  <meta name="description" content="Stock-Dawgg™ Terms of Use — subscriptions, market data use, and disclaimers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #b8860b;
+      --gold-light: #fef9e7;
+      --gold-border: #e8d88a;
+      --gold-dark: #7a6500;
+      --text: #1a1a1a;
+      --text-muted: #666;
+      --text-faint: #999;
+      --bg: #ffffff;
+      --bg-subtle: #fafaf8;
+      --border: rgba(0,0,0,0.08);
+      --border-strong: rgba(0,0,0,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--text); }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 48px 48px;
+    }
+
+    .page-header p {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+    }
+
+    .page-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .page-header .meta {
+      font-size: 13px;
+      color: var(--text-faint);
+      letter-spacing: 0;
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 48px 80px;
+    }
+
+    .tagline {
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gold-dark);
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section h2 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul {
+      list-style: none;
+      margin: 8px 0 12px;
+    }
+
+    .section ul li {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .section ol { margin: 8px 0 12px; padding-left: 20px; }
+    .section ol li { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.8; margin-bottom: 6px; }
+    .section a { color: var(--gold-dark); }
+
+    .section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .section strong {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* TABLE */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 16px 0;
+    }
+
+    .data-table th {
+      text-align: left;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border-strong);
+      background: var(--bg-subtle);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      font-weight: 300;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* CONTACT */
+    .contact-block {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-top: 12px;
+    }
+
+    .contact-block p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .contact-block strong {
+      font-weight: 500;
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-left {
+      font-size: 12px;
+      color: var(--text-faint);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .page-header { padding: 40px 24px 32px; }
+      .page-header h1 { font-size: 30px; }
+      .content { padding: 40px 24px 60px; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 16px; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">STOCK-DAWGG</a>
+    <ul class="nav-links">
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p>Digi-Dawgg Labs LLC</p>
+    <h1>Terms of Use</h1>
+    <span class="meta">Effective Date: October 20, 2026</span>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <h2>1. About These Terms</h2>
+      <p>These Terms of Use ("Terms") are an agreement between you and <strong>Digi-Dawgg Labs LLC</strong>, a Texas limited liability company ("we", "us"), for your use of the Stock-Dawgg™ mobile app and related services (the "Service").</p>
+      <p>By downloading or using Stock-Dawgg, you agree to these Terms and to our <a href="privacy.html">Privacy Policy</a>. If you do not agree, do not use the Service. You must be at least 18 years old, or the age of majority where you live, to subscribe.</p>
+    </div>
+
+    <div class="section">
+      <h2>2. Subscriptions, Free Trial and Cancellation</h2>
+      <p>Stock-Dawgg requires a paid subscription. Plans and current prices are shown in the app before you buy. Payment is handled by Apple (App Store) or Google (Google Play), not by us.</p>
+      <ul>
+        <li><strong>Free trial.</strong> New subscribers may receive a 7-day free trial. If you do not cancel at least 24 hours before the trial ends, your subscription starts and you are charged.</li>
+        <li><strong>Auto-renewal.</strong> Monthly and annual subscriptions renew automatically at the then-current price unless you cancel at least 24 hours before the end of the current period. Your Apple or Google account is charged within 24 hours before renewal.</li>
+        <li><strong>Cancelling.</strong> You can cancel at any time in your Apple ID or Google Play subscription settings. Access continues until the end of the period you paid for. Deleting the app does not cancel your subscription.</li>
+        <li><strong>Refunds.</strong> Refunds are handled by Apple or Google under their policies. We cannot issue refunds for store purchases directly.</li>
+        <li><strong>Price changes.</strong> If a price changes, Apple or Google will notify you as their rules require, and you can cancel before the new price applies.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>3. Market Data and How You May Use It</h2>
+      <p>Prices, dividends, charts and news in Stock-Dawgg come from third-party data providers under license. <strong>Market Data from <a href="https://www.tiingo.com">Tiingo.com</a></strong>; crypto data provided by <a href="https://www.coingecko.com/en/api">CoinGecko</a>.</p>
+      <p>You may use this data only for your own personal, non-commercial purposes. You agree not to:</p>
+      <ul>
+        <li>resell, redistribute, sublicense or publish the data, in whole or in part;</li>
+        <li>export or copy the data in bulk or in machine-readable form (for example CSV, Excel or JSON), or scrape it from the app;</li>
+        <li>use the data to build or feed another product, service, database or model;</li>
+        <li>reverse engineer, decompile or interfere with the app, its servers or its data feeds, or get around any usage limit.</li>
+      </ul>
+      <p>Reports the app creates for you (such as PDF portfolio and dividend reports) are for your personal records only. Our data providers own their data, and their terms may change what we can offer. If a provider stops supplying data, some features may change or stop working.</p>
+    </div>
+
+    <div class="section">
+      <h2>4. Not Investment Advice; Accuracy and Alerts</h2>
+      <p>Stock-Dawgg is an information tool. Nothing in the Service is investment, financial, tax or legal advice, or a recommendation to buy, sell or hold any security or cryptocurrency. You are solely responsible for your investment decisions; check important information with your broker before acting.</p>
+      <p>Market data may be delayed, incomplete or wrong. Dividend dates and amounts, including upcoming dividends, may be estimates or may change after the issuer announces them.</p>
+      <p>Price and dividend alerts depend on data providers, Apple and Google push services, your device settings and your internet connection. We do not guarantee that an alert will arrive, or arrive on time, and we are not responsible for any loss from a missed, late or inaccurate alert.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. Your Data, Acceptable Use and Ownership</h2>
+      <p><strong>Your data.</strong> Stock-Dawgg has no user accounts. Your watchlists, holdings and settings are stored on your device and in any backups you choose to make. To send alerts, our servers keep your device's push token, your watchlist symbols and your alert settings. Our <a href="privacy.html">Privacy Policy</a> explains what we collect and why. You are responsible for keeping your own backups.</p>
+      <p><strong>Acceptable use.</strong> Do not use the Service unlawfully, try to access our servers or other users' data, overload or disrupt the Service, or use automated tools to access it.</p>
+      <p><strong>Ownership.</strong> The app, its design, name and logo belong to Digi-Dawgg Labs LLC. Market data belongs to our data providers. We give you a personal, non-transferable, revocable license to use the app on devices you own or control, under these Terms and the store's usage rules.</p>
+    </div>
+
+    <div class="section">
+      <h2>6. Disclaimers, Liability and Other Terms</h2>
+      <p><strong>Disclaimer.</strong> The Service and all data are provided "as is" and "as available", without warranties of any kind, express or implied, including accuracy, timeliness, fitness for a particular purpose and uninterrupted operation, to the fullest extent the law allows.</p>
+      <p><strong>Limitation of liability.</strong> To the fullest extent the law allows, Digi-Dawgg Labs LLC and its data providers are not liable for any indirect, incidental, special, consequential or punitive damages, or for trading or investment losses, arising from your use of the Service. Our total liability for any claim is limited to the amount you paid for the Service in the 12 months before the claim.</p>
+      <p><strong>Termination.</strong> We may suspend or end your access if you break these Terms. You may stop using the Service at any time; cancel your subscription through Apple or Google to stop future charges.</p>
+      <p><strong>Governing law.</strong> These Terms are governed by the laws of the State of Texas, without regard to conflict-of-law rules, except where the law where you live requires otherwise.</p>
+      <p><strong>Changes.</strong> We may update these Terms. We will post the new version with a new effective date, and tell you in the app about material changes. Continuing to use the Service after that means you accept the updated Terms.</p>
+    </div>
+
+    <div class="section">
+      <h2>7. Additional Terms for the Apple App Store</h2>
+      <p>If you got Stock-Dawgg from the Apple App Store, these terms also apply:</p>
+      <ol>
+        <li>These Terms are between you and Digi-Dawgg Labs LLC only, not Apple. We, not Apple, are solely responsible for the app and its content.</li>
+        <li>Your license is limited to using the app on Apple-branded products you own or control, as allowed by the Usage Rules in the App Store Terms of Service.</li>
+        <li>We alone are responsible for maintenance and support. Apple has no obligation to provide any maintenance or support for the app.</li>
+        <li>If the app fails to meet any applicable warranty, you may notify Apple, and Apple will refund the purchase price (if any). To the extent the law allows, Apple has no other warranty obligation for the app.</li>
+        <li>We, not Apple, are responsible for any claims about the app or your use of it, including product liability claims, claims that it fails to meet legal or regulatory requirements, and consumer protection or privacy claims.</li>
+        <li>If a third party claims the app or your use of it infringes their intellectual property, we, not Apple, are responsible for investigating, defending and settling that claim.</li>
+        <li>You confirm that you are not located in a country subject to a U.S. government embargo or designated as "terrorist supporting", and that you are not on any U.S. government list of prohibited or restricted parties.</li>
+        <li>You must comply with any applicable third-party terms (for example, your wireless data service agreement) when using the app.</li>
+        <li>Apple and its subsidiaries are third-party beneficiaries of these Terms. Once you accept them, Apple may enforce them against you.</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2>8. Contact</h2>
+      <div class="contact-block">
+        <p>
+          <strong>Digi-Dawgg Labs LLC — Stock-Dawgg</strong>
+          402 W Palm Valley Blvd, Ste A, PMB 185<br>
+          Round Rock, TX 78664<br>
+          support@digidawgg.com<br>
+          digidawgg.com
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-left">© 2026 Digi-Dawgg Labs LLC &nbsp;·&nbsp; Stock-Dawgg</p>
+    <ul class="footer-links">
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="terms.html">Terms of Use</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
