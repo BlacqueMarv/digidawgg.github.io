@@ -297,7 +297,7 @@
   <div class="content">
 
     <div class="tagline">
-      Your portfolio never leaves your device. Your holdings, share counts, and cost basis stay on your phone — this is not a policy limitation, it is the architecture.
+      Your portfolio never leaves your device unless you choose to back it up — and then it is encrypted on your phone first. Your holdings, share counts, and cost basis are never sent to us. This is not a policy limitation, it is the architecture.
     </div>
 
     <div class="section">
@@ -315,7 +315,7 @@
         <li>Dividend frequency preferences per holding</li>
         <li>Monthly PDF reports</li>
       </ul>
-      <p>None of this information is transmitted to Digi-Dawgg Labs LLC or any third party.</p>
+      <p>None of this information is transmitted to Digi-Dawgg Labs LLC. It leaves your device only if you choose to make an encrypted backup to your own iCloud or Google Drive (Section 2c).</p>
 
       <p><strong>2b. Information Used for Price Alerts</strong></p>
       <p>To send you price alerts, our alert service stores the following — and nothing more:</p>
@@ -327,13 +327,22 @@
       </ul>
       <p>This information is not linked to your name, email address, or any account, and it never includes share counts, cost basis, or portfolio value.</p>
 
-      <p><strong>2c. Subscription Information</strong></p>
+      <p><strong>2c. Optional Backups</strong></p>
+      <p><strong>On-device snapshots</strong> are saved on your phone only and are protected by your device's operating system encryption, like the rest of your Stock-Dawgg data. They never leave your device.</p>
+      <p><strong>Cloud backups:</strong> if you choose to back up to the cloud, Stock-Dawgg encrypts your watchlist, portfolio, and settings with AES-256 on your device <em>before</em> anything is uploaded, and saves the encrypted file to your own storage — your iCloud account on iPhone, or a Stock-Dawgg folder in your own Google Drive on Android. Backups never pass through our servers, and we cannot read them.</p>
+      <ul>
+        <li><strong>iPhone:</strong> the encryption key is kept in your iCloud Keychain so you can restore on a new iPhone signed in to the same Apple ID.</li>
+        <li><strong>Android:</strong> you sign in with Google to grant access only to files Stock-Dawgg creates. Your backup is encrypted with a passphrase you choose, which is never stored anywhere — if you forget it, the backup cannot be recovered. Your Google account details stay on your device and are never sent to us.</li>
+      </ul>
+      <p>Cloud backups are entirely optional. If you never use them, your data never leaves your device.</p>
+
+      <p><strong>2d. Subscription Information</strong></p>
       <p>Subscriptions are purchased and billed by Apple (App Store) or Google (Google Play). Digi-Dawgg Labs LLC never receives your payment card details, name, or billing address. We use RevenueCat to confirm whether your subscription is active. RevenueCat receives an anonymous app user ID and your subscription purchase history from Apple or Google.</p>
 
-      <p><strong>2d. Market Data Requests</strong></p>
+      <p><strong>2e. Market Data Requests</strong></p>
       <p>When the app shows prices, charts, dividends, or news, it sends the ticker symbols it needs to our market data server, which retrieves the data from our licensed providers (Tiingo and CoinGecko). Our server records only the type of request, whether it succeeded, and how long it took. It does not record which tickers you asked for, and it does not store your IP address or any device identifier. The providers receive requests from our server, not from your device.</p>
 
-      <p><strong>2e. Information We Do Not Collect</strong></p>
+      <p><strong>2f. Information We Do Not Collect</strong></p>
       <p>Stock-Dawgg does not collect, store, or transmit any of the following:</p>
       <ul>
         <li>Your name or email address</li>
@@ -405,6 +414,11 @@
             <td>Anonymous app user ID, subscription purchase history</td>
           </tr>
           <tr>
+            <td><strong>iCloud (Apple) / Google Drive</strong></td>
+            <td>Optional backups, only if you turn them on</td>
+            <td>Your encrypted backup file, stored in your own account — we cannot read it</td>
+          </tr>
+          <tr>
             <td><strong>Apple / Google</strong></td>
             <td>Subscription purchases and billing</td>
             <td>Handled by your App Store or Google Play account under their own policies</td>
@@ -448,6 +462,7 @@
     <div class="section">
       <h2>11. Data Deletion</h2>
       <p>To delete all Stock-Dawgg data from your device, uninstall the app. All locally stored data — watchlist, portfolio, preferences, and cached data — is permanently deleted upon uninstallation. On iPhone, saved PDF reports are deleted with the app. On Android, PDF reports saved to Downloads/StockDawgg/ must be deleted manually if desired.</p>
+      <p>Backups you saved to iCloud or Google Drive stay in your own account until you delete them. On iPhone, go to Settings → your name → iCloud → Manage Storage → Stock-Dawgg. On Android, delete the Stock-Dawgg folder in Google Drive.</p>
       <p>After you uninstall, your price alert record is deleted from our servers automatically the next time our alert service finds that the device's push token is no longer valid. You can also email us to request deletion at any time.</p>
       <p>Subscription purchase records are kept by Apple or Google and RevenueCat as required for billing and tax purposes. To cancel a subscription, use your App Store or Google Play account settings — uninstalling the app does not cancel it.</p>
     </div>
